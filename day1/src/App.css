@@ -12,6 +12,10 @@ li {
   list-style: none;
 }
 
+input:focus {
+  outline: none;
+}
+
 /* app */
 #root {
   height: 100vh;
@@ -40,10 +44,7 @@ li {
   background-color: transparent;
   border: none;
   margin-left: 10px;
-}
-
-.login-panel input::placeholder {
-  color: #a2a9a9;
+  color: #fefefe;
 }
 
 .login-panel {
@@ -59,7 +60,7 @@ li {
   margin-bottom: 10px;
 }
 
-.login-panel li span{
+li span{
   color: #51484f;
 }
 
@@ -77,5 +78,14 @@ li {
   color: #fafbfc;
   border: none;
   width: 100%;
+  transition: all .2s ease-in-out;
 }
 
+.login-button:hover {
+  transform: scale(1.1);
+}
+
+.input__focus {
+  color: #fefefe;
+  transition: all .3s ease-in-out;
+}

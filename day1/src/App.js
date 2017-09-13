@@ -45,7 +45,7 @@ export default class App extends Component {
     return (
       <div className="login-container">
         <div className="login-modal">
-          <div className="login-panel">
+          <form className="login-panel">
             <ul>
               <li>
                 <span className={`fa fa-address-card fa-fw ${isFocus ? 'input__focus' : ''}`}></span>
@@ -53,18 +53,18 @@ export default class App extends Component {
               </li>
               <li>
                 <span className="fa fa-envelope fa-fw"></span>
-                <input className="user-email" required onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleUserEmailInput} name="email" type="text" value={email} placeholder="john@smith.con"/>
+                <input className="user-email" required onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleUserEmailInput} name="email" type="email" value={email} placeholder="john@smith.con"/>
               </li>
               <li>
                 <span className="fa fa-unlock-alt fa-fw"></span>
-                <input className="user-password" onFocus={this.handleFocus} onBlur={this.handleBlur} required onChange={this.handleUserPasswordInput} name="password" type="text" value={password} placeholder="password"/>
+                <input className="user-password" onFocus={this.handleFocus} onBlur={this.handleBlur} required onChange={this.handleUserPasswordInput} name="password" type="password" value={password} placeholder="password"/>
               </li>
             </ul>
-            <button className="login-button">
+            <button className="login-button" type="submit">
               <span>LOG IN</span>
               <span>></span>
             </button>
-          </div>
+          </form>
         </div>
       </div>
     );

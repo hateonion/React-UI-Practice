@@ -62,6 +62,7 @@ input:focus {
 
 li span{
   color: #51484f;
+  transition: all .3s ease-in-out;
 }
 
 .login-panel li:last-child {
@@ -87,5 +88,4 @@ li span{
 
 .input__focus {
   color: #fefefe;
-  transition: all .3s ease-in-out;
 }

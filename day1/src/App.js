@@ -10,7 +10,7 @@ export default class App extends Component {
       username: '',
       password: '',
       email: '',
-      isFocus: false,
+      isFocus: false
     };
 
     this.handleUserNameInput = this.handleUserNameInput.bind(this);

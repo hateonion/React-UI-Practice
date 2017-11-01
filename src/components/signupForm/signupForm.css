@@ -1,28 +1,3 @@
-/* global*/
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  box-sizing: border-box; 
-}
-
-li {
-  list-style: none;
-}
-
-input:focus {
-  outline: none;
-}
-
-/* app */
-#root {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-}
-
 .login-container {
   flex-grow: 1;
   display: flex;
@@ -55,6 +30,7 @@ input:focus {
 }
 
 .login-panel li {
+  display: flex;
   padding-bottom: 5px;
   border-bottom: 1px solid #524a51;
   margin-bottom: 10px;

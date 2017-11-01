@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
+import './signupForm.css';
 
-export default class App extends Component {
+export default class SignUpForm extends Component {
 
   constructor(props) {
     super(props);

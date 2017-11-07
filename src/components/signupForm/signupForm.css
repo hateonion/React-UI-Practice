@@ -2,6 +2,10 @@
   flex-grow: 1;
   display: flex;
   justify-content: center;
+  background-image: url('https://picsum.photos/1400/795');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .login-modal {
@@ -22,6 +26,10 @@
   color: #fefefe;
 }
 
+.login-panel input:focus ~ label{
+  opacity: 1;
+}
+
 .login-panel {
   padding: 30px 20px;
   display: flex;
@@ -31,14 +39,20 @@
 
 .login-panel li {
   display: flex;
+  flex-direction: row-reverse;
   padding-bottom: 5px;
   border-bottom: 1px solid #524a51;
   margin-bottom: 10px;
 }
 
-li span{
-  color: #51484f;
-  transition: all .3s ease-in-out;
+.login-panel label {
+  color: #fefefe;
+  opacity: 0.3;
+}
+
+.login-panel input:focus + label {
+  transition: 0.5s ease;
+  opacity: 1;
 }
 
 .login-panel li:last-child {
@@ -49,6 +63,7 @@ li span{
   font-size: 15px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   border-radius: 2px;
   background-color: #de4137;
@@ -59,9 +74,9 @@ li span{
 }
 
 .login-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
-.input__focus {
-  color: #fefefe;
+.login-button:active {
+  transform: scale(0.99);
 }

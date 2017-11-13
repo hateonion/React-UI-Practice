@@ -1,6 +1,23 @@
-.flex-container{
+.flex-container-column{
     display: flex;
     flex-direction: column;
+}
+
+.flex-container-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.receipt-price {
+  justify-content: space-between;
+}
+
+.receipt-calculation::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: chocolate;
+  position: absolute;
 }
 
 .receipt-cost {

@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import SignUpForm from './components/signupForm';
 import Receipt from './components/receipt';
-import './App.css';
+import './App.scss';
 
 const Home = () => (
   <ul>

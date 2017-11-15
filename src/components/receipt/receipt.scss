@@ -20,6 +20,15 @@
   position: absolute;
 }
 
+.receipt-form-tip::before {
+  content: '\f023';
+  position: absolute;
+}
+
+.creditcard {
+  align-items: flex-end;
+}
+
 .receipt-cost {
     margin: 40px 0;
 }

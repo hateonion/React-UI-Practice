@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import Slider from './Slider';
 import './receipt.scss';
+import _ from 'lodash';
 
 const InputField = ({type='input', name, label, id, placeHolder}) => (
-  <label htmlFor={id}>
+  <label htmlFor={id} className="flex-container-column">
     <span>{label}</span>
     <input id={id} type={ type } name={name} placeholder={placeHolder}/>
   </label>
 );
 
 const SelectField = ({name, label, id, selectedIndex, options}) => (
-  <label htmlFor={id}>
+  <label htmlFor={id} className="flex-container-column">
     <span>{label}</span>
     <select name={name} id={id}>
-      {options.forEach((option, index) => (
+      {options.map((option, index) => (
         index === selectedIndex ?
           (<option key={index} value={option} selected>{option}</option>) :
           (<option key={index} value={option}>{option}</option>)
@@ -54,7 +55,7 @@ class Receipt extends Component {
               <span>Mon,Aug 22,2016 to Fri,Aug29,2016</span>
             </p>
           </div>
-          <form className="receipt-form flex-container-column">
+          <div className="receipt-details flex-container-column">
             <h3>Order Summary</h3>
             <ul className="receipt-calculation">
               <li className="flex-container-row receipt-price"><span>320x1day</span><span>320 GBP</span></li>
@@ -64,16 +65,29 @@ class Receipt extends Component {
               <li className="flex-container-row receipt-price"><span>Total</span><span>364 GBP</span></li>
             </ul>
             <h3>Payment information</h3>
-            <InputField id="user-name" label="NAME ON CREDIT CARD" name="name" placeHolder="John Smith"/>
-            <InputField id="user-creditcard" label="CREDIT CARD NUMBER" name="card" placeHolder="0000 0000 0000 0000" />
-            <SelectField 
-              id="expire-month"
-              label="EXPIRES ON"
-              name="expMonth"
-              selectedIndex={1}
-              options={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dev']}
-            />
-          </form>
+            <form className="receipt-form flex-container-column">
+              <InputField id="user-name" label="NAME ON CREDIT CARD" name="name" placeHolder="John Smith"/>
+              <InputField id="user-creditcard" label="CREDIT CARD NUMBER" name="card" placeHolder="0000 0000 0000 0000" />
+              <div className="creditcard flex-container-row">
+                <SelectField 
+                  id="expire-month"
+                  label="EXPIRES ON"
+                  name="expMonth"
+                  selectedIndex={1}
+                  options={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dev']}
+                />
+                <SelectField 
+                  id="expire-day"
+                  name="expDay"
+                  selectedIndex={1}
+                  options={_.range(2016, 2020)}
+                />
+                <InputField id="user-cvc" label="CVC" name="cvc" placeHolder="000" />
+              </div>
+              <button type="submit">Book Security</button>
+              <p className="receipt-form-tip">Your credit card information is encrypted</p>
+            </form>
+          </div>
         </div>
       </div>
     );

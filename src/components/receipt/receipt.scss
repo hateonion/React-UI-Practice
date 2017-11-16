@@ -41,12 +41,8 @@
       }
     }
   }
-  .receipt-calculation::after {
-    content: '';
-    width: 100%;
-    height: 0.5px;
-    background-color: chocolate;
-    position: absolute;
+  .receipt-calculation {
+    border-bottom: 1px solid chocolate;
   }
   .receipt-form {
     &-title {

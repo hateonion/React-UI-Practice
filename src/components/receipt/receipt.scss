@@ -62,15 +62,19 @@
     color: #fefefe;
     margin: 10px 0;
   }
-
+  &-tip {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+      padding-right: 2px;
+    }
+  }
   }
 
   .receipt-form-tip {
     padding-left: 5px;
-  }
-  .receipt-form-tip::before {
-    content: '\f023';
-    position: absolute;
   }
 
   .creditcard {

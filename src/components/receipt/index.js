@@ -87,7 +87,10 @@ class Receipt extends Component {
                 <InputField id="user-cvc" label="CVC" name="cvc" placeHolder="000" classNames="row-1"/>
               </div>
               <button className="receipt-button" type="submit">Book Security</button>
-              <p className="receipt-form-tip">Your credit card information is encrypted</p>
+              <div className="receipt-form-tip">
+                <i className="fa fa-lock receipt-form-tip-icon"></i>
+                <p >Your credit card information is encrypted</p>
+              </div>
             </form>
           </div>
         </div>

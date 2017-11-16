@@ -10,6 +10,7 @@
 
 .receipt-container {
   margin: 0 auto;
+  width: 800px;
 }
 
 .receipt-body {
@@ -23,9 +24,11 @@
     padding-left: 10px;
     padding-bottom: 10px;
     margin-right: 40px;
+    width: 50%;
   }
   .receipt-details {
     background-color: #fefefe;
+    width: 50%;
     padding-left: 10px;
     &-title {
       margin: 25px 0;
@@ -50,19 +53,58 @@
       margin-top: 20px;
       margin-bottom: 10px;
     }
+
+  .receipt-button {
+    background: orangered;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fefefe;
+    margin: 10px 0;
+  }
+
+  }
+
+  .receipt-form-tip {
+    padding-left: 5px;
   }
   .receipt-form-tip::before {
     content: '\f023';
     position: absolute;
   }
+
   .creditcard {
     align-items: flex-end;
   }
+
   .receipt-cost {
     margin: 20px 0;
   }
 
+  .select-field {
+    height: 50px;
+    justify-content: space-around;
+
+    &-body {
+      text-indent: 1px;
+      appearance: none;
+      border: none;
+      background: transparent;
+      border-bottom: 1px solid chocolate;
+  }
+}
+
   .input-field {
-    height: 100px;
+    justify-content: space-around;
+    height: 50px;
+    &-box {
+      border: none;
+      border-bottom: 1px solid chocolate;
+    }
+  }
+
+  .row-1 {
+    flex-grow: 1;
+    flex-basis: 0;
   }
 }

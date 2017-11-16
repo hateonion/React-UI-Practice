@@ -3,21 +3,21 @@ import Slider from './Slider';
 import './receipt.scss';
 import _ from 'lodash';
 
-const InputField = ({type='input', name, label, id, placeHolder}) => (
-  <label htmlFor={id} className="flex-container-column input-field">
+const InputField = ({type='input', name, label, id, placeHolder, classNames=''}) => (
+  <label htmlFor={id} className={`flex-container-column input-field ${classNames}`}>
     <span className="input-field-label">{label}</span>
     <input className="input-field-box" id={id} type={ type } name={name} placeholder={placeHolder}/>
   </label>
 );
 
-const SelectField = ({name, label, id, selectedIndex, options}) => (
-  <label htmlFor={id} className="flex-container-column select-field">
-    <span>{label}</span>
-    <select name={name} id={id}>
+const SelectField = ({name, label, id, selectedIndex, options, classNames=''}) => (
+  <label htmlFor={id} className={`flex-container-column select-field ${classNames}`}>
+    <span className="select-field-label">{label}</span>
+    <select name={name} id={id} className="select-field-body">
       {options.map((option, index) => (
         index === selectedIndex ?
-          (<option key={index} value={option} selected>{option}</option>) :
-          (<option key={index} value={option}>{option}</option>)
+          (<option key={index} className="select-field-option" value={option} selected>{option}</option>) :
+          (<option key={index} className="select-field-option" value={option}>{option}</option>)
       ))}
     </select>
   </label>
@@ -67,24 +67,26 @@ class Receipt extends Component {
             <form className="receipt-form flex-container-column">
               <h3 className="receipt-form-title">Payment information</h3>
               <InputField id="user-name" label="NAME ON CREDIT CARD" name="name" placeHolder="John Smith"/>
-              <InputField id="user-creditcard" label="CREDIT CARD NUMBER" name="card" placeHolder="0000 0000 0000 0000" />
+              <InputField type="number" id="user-creditcard" label="CREDIT CARD NUMBER" name="card" placeHolder="0000 0000 0000 0000" />
               <div className="creditcard flex-container-row">
                 <SelectField 
                   id="expire-month"
                   label="EXPIRES ON"
                   name="expMonth"
+                  classNames="row-1"
                   selectedIndex={1}
                   options={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dev']}
                 />
                 <SelectField 
                   id="expire-day"
                   name="expDay"
+                  classNames="row-1"
                   selectedIndex={1}
                   options={_.range(2016, 2020)}
                 />
-                <InputField id="user-cvc" label="CVC" name="cvc" placeHolder="000" />
+                <InputField id="user-cvc" label="CVC" name="cvc" placeHolder="000" classNames="row-1"/>
               </div>
-              <button type="submit">Book Security</button>
+              <button className="receipt-button" type="submit">Book Security</button>
               <p className="receipt-form-tip">Your credit card information is encrypted</p>
             </form>
           </div>
